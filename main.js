@@ -177,12 +177,21 @@ document.getElementById("organizacije").style.background = "transparent";
 }
 
 let api = "HTTPs://api.airvisual.com/v2/city?city=Mostar&state=federation-of-b-h&country=bosnia-herzegovina&key=9aad6d8a-c216-4aef-9282-b7c0cdc6a347";
-    
-    fetch(HTTPs://api.airvisual.com/v2/city?city=Mostar&state=federation-of-b-h&country=bosnia-herzegovina&key=9aad6d8a-c216-4aef-9282-b7c0cdc6a347), {
-        method : "GET",
-        mode: 'cors',
-        
-    }
+	func GetMessages(c *gin.Context) {
+	version := c.Param("version")
+	fmt.Println("Version", version)
+	if version == "v2" {
+		c.Header("Access-Control-Allow-Origin", "http://localhost:8080")
+	}
+	c.JSON(http.StatusOK, gin.H{"messages": messages})
+
+	fetch(api)
+	.then(function(response){
+		const data = response.json();
+		console.log(data);
+		return data;
+
+	}})
 	.then(function(response){
 		const data = response.json();
 		console.log(data);
