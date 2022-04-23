@@ -176,13 +176,21 @@ document.getElementById("organizacije").style.background = "transparent";
 }
 }
 
-let api = "HTTPs://api.airvisual.com/v2/city?city=Mostar&state=federation-of-b-h&country=bosnia-herzegovina&key=9aad6d8a-c216-4aef-9282-b7c0cdc6a347";
+
 	
-	fetch(api)
-	.then(function(response){
-		const data = response.json();
-		console.log(data);
-		return data;
+	const url = 'https://api.airvisual.com/v2/city?city=Mostar&state=federation-of-b-h&country=bosnia-herzegovina&key=9aad6d8a-c216-4aef-9282-b7c0cdc6a347';
+
+const options = {
+  method: 'GET',
+  mode: 'no-cors',
+  headers: {
+    'Authorization': `Bearer ${process.env.REACT_APP_YAMMER_ACCESS_TOKEN}`,
+  }
+};
+
+fetch(url, options).then(function(response) {
+  console.log(response);
+  return response.json();
 
 })
 	.then(function(data){
