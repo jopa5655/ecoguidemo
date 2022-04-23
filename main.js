@@ -254,7 +254,7 @@ function showError(error) {
 }
 
 function getAir(latitude, longitude){
-	let api = "HTTPs://api.airvisual.com/v2/nearest_city?lat=" + latitude + "&" + longitude + "&key=9aad6d8a-c216-4aef-9282-b7c0cdc6a347";
+	let api = "HTTPS://api.airvisual.com/v2/nearest_city?lat=" + latitude + "&" + longitude + "&key=9aad6d8a-c216-4aef-9282-b7c0cdc6a347";
 	
 	fetch(api)
 	.then(function(response){
