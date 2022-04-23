@@ -188,8 +188,9 @@ const options = {
 };
 
 fetch(url, options).then(function(response) {
-  console.log(response);
-  return response.json();
+  const data = response.json();
+		console.log(data);
+		return data;
 
 })
 	.then(function(data){
