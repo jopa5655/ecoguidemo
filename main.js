@@ -178,26 +178,8 @@ document.getElementById("organizacije").style.background = "transparent";
 
 
 
-let api = "HTTPS://api.airvisual.com/v2/city?city=Mostar&state=federation-of-b-h&country=bosnia-herzegovina&key=9aad6d8a-c216-4aef-9282-b7c0cdc6a347";
-	
-Access-Control-Allow-Origin : http://localhost:3000
-Access-Control-Allow-Credentials : true
-Access-Control-Allow-Methods : GET, POST, OPTIONS
-Access-Control-Allow-Headers : Origin, Content-Type, Accept
-
- let headers = new Headers();
-
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');
-    headers.append('Authorization', 'Basic ' + base64.encode(username + ":" +  password));
-    headers.append('Origin','http://localhost:3000');
-
-	  fetch(api, {
-        mode: 'cors',
-        credentials: 'include',
-        method: 'POST',
-        headers: headers
-	  })
+let api = "HTTPs://api.airvisual.com/v2/city?city=Mostar&state=federation-of-b-h&country=bosnia-herzegovina&key=9aad6d8a-c216-4aef-9282-b7c0cdc6a347";
+	fetch(api);
 	.then(function(response){
 		const data = response.json();
 		console.log(data);
