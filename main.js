@@ -184,7 +184,6 @@ const options = {
   method: 'GET',
   mode: 'no-cors',
   headers: {
-    'Authorization': `Bearer ${process.env.REACT_APP_YAMMER_ACCESS_TOKEN}`,
   }
 };
 
