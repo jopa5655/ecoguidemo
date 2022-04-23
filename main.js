@@ -1,4 +1,4 @@
-	window.addEventListener("scroll", function(e){
+window.addEventListener("scroll", function(e){
   var header = document.getElementById("menu");
 var sticky = header.offsetTop;
 
